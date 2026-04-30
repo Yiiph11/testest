@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Chill Vibes | Próximamente en Roblox</title>
+    <link rel="icon" href="IconoTHE.gif" type="image/gif">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0508;
+            color: #e0e0e0;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Fondo fijo con imagen (cambia la URL por tu imagen) */
+        .fixed-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('chilly.gif') no-repeat center center fixed;
+            background-size: cover;
+            z-index: -3;
+        }
+
+        /* Overlay oscuro (azul muy oscuro) */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(5, 10, 20, 0.7);
+            z-index: -2;
+        }
+
+        /* Partículas flotantes en tonos cian y morado */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.2), rgba(155, 89, 182, 0.15), transparent);
+            border-radius: 50%;
+            animation: floatParticle linear infinite;
+        }
+
+        @keyframes floatParticle {
+            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+            10% { opacity: 0.5; }
+            90% { opacity: 0.3; }
+            100% { transform: translateY(-20vh) translateX(40px); opacity: 0; }
+        }
+
+        /* Contenedor principal */
+        .container-custom {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Tarjetas glassmorfismo - bordes cian/morado */
+        .glass-card {
+            background: rgba(10, 15, 30, 0.45);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 32px;
+            padding: 2.5rem;
+            transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.7s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .glass-card:hover {
+            border-color: rgba(155, 89, 182, 0.6);
+            background: rgba(20, 25, 45, 0.55);
+            transform: translateY(-5px);
+            box-shadow: 0 25px 40px rgba(0, 212, 255, 0.15);
+        }
+
+        /* Delay escalonado */
+        .glass-card:nth-child(1) { animation-delay: 0.05s; }
+        .glass-card:nth-child(2) { animation-delay: 0.15s; }
+        .glass-card:nth-child(3) { animation-delay: 0.25s; }
+        .glass-card:nth-child(4) { animation-delay: 0.35s; }
+        .glass-card:nth-child(5) { animation-delay: 0.45s; }
+
+        /* Títulos con gradiente cian, morado, azul oscuro */
+        .title-gradient {
+            background: linear-gradient(135deg, #00D4FF, #9B59B6, #2C3E50);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+        }
+
+        /* Botón principal (cian a morado) */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #00B4D8, #8E44AD);
+            color: white;
+            font-weight: 600;
+            padding: 0.9rem 2rem;
+            border-radius: 60px;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0, 180, 200, 0.3);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.03) translateY(-2px);
+            box-shadow: 0 10px 30px rgba(155, 89, 182, 0.4);
+            background: linear-gradient(135deg, #00D4FF, #9B59B6);
+        }
+
+        /* Botón secundario (outline) - color morado */
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1.5px solid #9B59B6;
+            color: #C39BD3;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(4px);
+            padding: 0.8rem 1.8rem;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: rgba(155, 89, 182, 0.2);
+            transform: translateY(-2px);
+            border-color: #D2B4DE;
+            color: #E8DAEF;
+        }
+
+        /* Botón volver */
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 212, 255, 0.15);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(0, 212, 255, 0.4);
+            color: #7DF9FF;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .btn-back:hover {
+            background: rgba(155, 89, 182, 0.25);
+            transform: translateX(-3px);
+            border-color: #9B59B6;
+            color: #D2B4DE;
+        }
+
+        /* Badges de características */
+        .feature-badge {
+            display: inline-block;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.4);
+            border-radius: 40px;
+            padding: 0.4rem 1.2rem;
+            margin: 0.3rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            color: #A0E6FF;
+        }
+
+        .feature-badge:hover {
+            background: rgba(155, 89, 182, 0.2);
+            border-color: #9B59B6;
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        /* Grid */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        /* Marco de imágenes */
+        .image-frame {
+            background: rgba(0, 150, 200, 0.05);
+            border-radius: 28px;
+            overflow: hidden;
+            transition: all 0.4s;
+            border: 1px solid rgba(155, 89, 182, 0.3);
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .image-frame:hover {
+            border-color: #00D4FF;
+            transform: scale(1.01);
+        }
+
+        .image-frame:hover img {
+            transform: scale(1.02);
+        }
+
+        /* Sección de lanzamiento */
+        .launch-message {
+            background: rgba(0, 212, 255, 0.05);
+            border-radius: 32px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(155, 89, 182, 0.4);
+            backdrop-filter: blur(4px);
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: rgba(10, 15, 30, 0.5);
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .faq-question {
+            padding: 1.2rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            background: rgba(0, 212, 255, 0.08);
+        }
+
+        .faq-question i {
+            transition: transform 0.3s;
+            color: #7DF9FF;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            padding: 0 1.5rem;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 0 1.5rem 1.2rem 1.5rem;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* Header */
+        .header {
+            position: sticky;
+            top: 0;
+            background: rgba(5, 10, 20, 0.8);
+            backdrop-filter: blur(20px);
+            z-index: 100;
+            padding: 1rem;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(155, 89, 182, 0.3);
+            margin-top: 3rem;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 900px) {
+            .grid-2 { grid-template-columns: 1fr; gap: 1.5rem; }
+            .container-custom { padding: 1rem; }
+            .glass-card { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fondo fijo (cambia la URL por tu imagen) -->
+    <div class="fixed-bg"></div>
+    <div class="overlay"></div>
+    <div class="particles" id="particles"></div>
+
+    <!-- Header -->
+    <div class="header">
+        <div class="container-custom mx-auto flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Volver al inicio</a>
+                <img src="IconoTHE.gif" class="w-12 h-12 rounded-full shadow-lg" alt="Logo">
+                <span class="text-xl font-bold title-gradient tracking-wide">Chill Vibes</span>
+            </div>
+            <div class="flex gap-4">
+                <a href="https://discord.gg/KQ6Fjma2W7" target="_blank" class="text-white/70 hover:text-cyan-300 transition duration-300"><i class="fab fa-discord"></i> Discord</a>
+                <a href="#faq" class="text-white/70 hover:text-purple-300 transition duration-300">FAQ</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-custom">
+        <!-- Hero Section -->
+        <div class="glass-card">
+            <div class="grid-2">
+                <div>
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="px-3 py-1 bg-cyan-500/20 rounded-full text-cyan-300 text-xs">Próximamente en Roblox</span>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl title-gradient mb-4">Chill Vibes</h1>
+                    <p class="text-lg leading-relaxed opacity-85 mb-6">
+                        El juego de prueba definitivo para disfrutar con amigos sin estrés. 
+                        Diversión casual, mecánicas sencillas y momentos alegres. Perfecto para relajarte después de un largo día.
+                    </p>
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <span class="feature-badge"><i class="fas fa-users"></i> Cooperativo</span>
+                        <span class="feature-badge"><i class="fas fa-gamepad"></i> Minijuegos</span>
+                        <span class="feature-badge"><i class="fas fa-face-smile"></i> Sin estrés</span>
+                        <span class="feature-badge"><i class="fas fa-calendar-week"></i> Eventos semanales</span>
+                    </div>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#" class="btn-primary" id="remindBtn"><i class="fas fa-bell"></i> Recordar lanzamiento</a>
+                        <a href="https://discord.gg/KQ6Fjma2W7" target="_blank" class="btn-outline"><i class="fab fa-discord"></i> Comunidad</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="image-frame">
+                        <img src="memeR.jpg" alt="Chill Vibes - Juego de Roblox" onerror="this.src='https://placehold.co/600x400/0a1525/00D4FF?text=Chill+Vibes'">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Características detalladas -->
+        <div class="glass-card">
+            <div class="grid-2">
+                <div class="order-2 md:order-1">
+                    <div class="image-frame">
+                        <img src="memer2.jpg" alt="Gameplay de Chill Vibes" onerror="this.src='https://placehold.co/600x400/0a1525/9B59B6?text=Gameplay'">
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <h2 class="text-3xl title-gradient mb-4">✨ Características</h2>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3 items-start">
+                            <i class="fas fa-crown text-cyan-400 mt-1"></i>
+                            <div><strong class="text-cyan-300">Minijuegos cooperativos</strong><br>Juega con amigos en modos diseñados para trabajar en equipo.</div>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <i class="fas fa-palette text-purple-400 mt-1"></i>
+                            <div><strong class="text-purple-300">Personalización de avatar</strong><br>Desbloquea cosméticos divertidos a medida que avanzas.</div>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <i class="fas fa-calendar-alt text-cyan-400 mt-1"></i>
+                            <div><strong class="text-cyan-300">Eventos semanales</strong><br>Actividades especiales cada semana con recompensas exclusivas.</div>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <i class="fas fa-music text-purple-400 mt-1"></i>
+                            <div><strong class="text-purple-300">Banda sonora original</strong><br>Música relajante creada especialmente para la experiencia Chill Vibes.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lanzamiento (mensaje sin fecha) -->
+        <div class="glass-card text-center">
+            <h2 class="text-3xl title-gradient mb-3">🎮 Fecha de lanzamiento</h2>
+            <div class="launch-message max-w-2xl mx-auto">
+                <i class="fas fa-hourglass-half text-3xl text-cyan-400 mb-3 block"></i>
+                <p class="text-lg mb-2">La fecha de lanzamiento aún no está definida.</p>
+                <p class="opacity-80">Únete a nuestro Discord para ser el primero en enterarte de las novedades y acceder a la beta cerrada.</p>
+                <div class="mt-4">
+                    <a href="https://discord.gg/KQ6Fjma2W7" target="_blank" class="btn-primary"><i class="fab fa-discord"></i> Unirse a Discord</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Roadmap -->
+        <div class="glass-card">
+            <div class="grid-2">
+                <div>
+                    <h2 class="text-3xl title-gradient mb-4">📋 Roadmap</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-3 h-3 bg-cyan-400 rounded-full"></div>
+                            <span class="text-cyan-300 font-medium">Fase 1:</span>
+                            <span class="opacity-80">Desarrollo de minijuegos base (Completado)</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-3 h-3 bg-purple-400 rounded-full animate-pulse"></div>
+                            <span class="text-purple-300 font-medium">Fase 2:</span>
+                            <span class="opacity-80">Beta cerrada con comunidad (En curso)</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-3 h-3 bg-gray-500 rounded-full"></div>
+                            <span class="text-gray-300 font-medium">Fase 3:</span>
+                            <span class="opacity-80">Lanzamiento oficial (Próximamente)</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-3 h-3 bg-gray-500 rounded-full"></div>
+                            <span class="text-gray-300 font-medium">Fase 4:</span>
+                            <span class="opacity-80">Actualizaciones de personajes y eventos</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="image-frame">
+                        <img src="memr3.jpg" alt="Roadmap del juego" onerror="this.src='https://placehold.co/600x300/0a1525/00D4FF?text=Roadmap'">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div id="faq" class="glass-card">
+            <h2 class="text-3xl title-gradient text-center mb-6">❓ Preguntas frecuentes</h2>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Cuándo estará disponible el juego?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">Todavía no tenemos una fecha concreta, pero estamos trabajando para ofrecer la mejor experiencia. Los miembros de nuestro Discord recibirán novedades primero.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Será gratuito?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">Sí, Chill Vibes será completamente gratuito. Habrá cosméticos opcionales dentro del juego para quienes quieran apoyar el desarrollo.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿En qué plataformas estará disponible?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">El juego estará disponible en PC, móvil y consolas a través de Roblox, con soporte multiplataforma completo.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Puedo formar parte del equipo de desarrollo?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">¡Claro! Únete a nuestro Discord y mantente atento a las convocatorias para testers y colaboradores.</div>
+            </div>
+        </div>
+
+        <!-- Sección final: solo Discord -->
+        <div class="glass-card text-center">
+            <h2 class="text-3xl title-gradient mb-3">🎮 Mantente al día</h2>
+            <p class="mb-6 opacity-80">Únete a nuestro Discord para no perderte ninguna novedad, eventos y la beta cerrada.</p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="https://discord.gg/KQ6Fjma2W7" target="_blank" class="btn-primary"><i class="fab fa-discord"></i> Discord oficial</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p class="opacity-50 text-sm">Chill Vibes - Un juego de The Light is Amazing Studio <br> Próximamente en Roblox | © 2025</p>
+    </div>
+
+    <script>
+        // Partículas flotantes
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const count = 70;
+            for (let i = 0; i < count; i++) {
+                const p = document.createElement('div');
+                p.classList.add('particle');
+                const size = Math.random() * 60 + 15;
+                p.style.width = size + 'px';
+                p.style.height = size + 'px';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.animationDuration = Math.random() * 12 + 8 + 's';
+                p.style.animationDelay = Math.random() * 10 + 's';
+                p.style.opacity = Math.random() * 0.4 + 0.1;
+                container.appendChild(p);
+            }
+        }
+        createParticles();
+
+        // FAQ Acordeón
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const parent = question.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Botón de recordatorio
+        const remindBtn = document.getElementById('remindBtn');
+        if (remindBtn) {
+            remindBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert('📅 Te avisaremos cuando el juego esté disponible. ¡Sigue atento a nuestro Discord!');
+            });
+        }
+    </script>
+</body>
+</html>

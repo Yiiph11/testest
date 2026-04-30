@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>The Light is Amazing | Studio - Creadores</title>
+    <link rel="icon" href="IconoTHE.gif" type="image/gif">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+        }
+
+        /* FONDO fijo (tortu.gif) */
+        .main-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -2;
+            background: url('tortu.gif') no-repeat center center !important;
+            background-size: cover !important;
+            transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Navegación */
+        .nav-zone {
+            position: fixed;
+            top: 0;
+            height: 100%;
+            width: 12%;
+            z-index: 100;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+            opacity: 0.15;
+            backdrop-filter: blur(4px);
+        }
+        .nav-zone:hover { 
+            opacity: 1; 
+            background: linear-gradient(90deg, rgba(255,255,255,0.1), transparent);
+        }
+        .nav-left { 
+            left: 0; 
+            background: linear-gradient(90deg, rgba(0,0,0,0.2), transparent);
+        }
+        .nav-right { 
+            right: 0; 
+            background: linear-gradient(270deg, rgba(0,0,0,0.2), transparent);
+        }
+        .nav-zone span {
+            font-size: 4rem;
+            font-weight: 100;
+            text-shadow: 0 0 20px rgba(0,0,0,0.5);
+            transition: transform 0.3s;
+        }
+        .nav-zone:hover span {
+            transform: scale(1.2);
+        }
+
+        /* SECCIONES Y TRANSICIONES */
+        .section {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 8%;
+            text-align: center;
+            overflow-y: auto;
+            opacity: 0;
+            filter: blur(12px);
+            transform: translateX(120px);
+            transition: all 0.9s cubic-bezier(0.23, 1, 0.32, 1);
+            pointer-events: none;
+        }
+        .section.active {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateX(0);
+            pointer-events: auto;
+        }
+        .section.exit {
+            opacity: 0;
+            filter: blur(12px);
+            transform: translateX(-120px);
+        }
+
+        /* TÍTULOS PRINCIPALES */
+        .lotus-title { 
+            font-family: 'Playfair Display', serif; 
+            font-style: italic;
+            text-shadow: 0 0 30px rgba(0,0,0,0.7);
+            font-weight: 700;
+        }
+        
+        /* CAJAS DE CONTENIDO */
+        .content-box {
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 2rem 2rem;
+            border-radius: 28px;
+            transition: all 0.4s ease;
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            box-shadow: 0 25px 45px rgba(0,0,0,0.3);
+        }
+        .content-box:hover { 
+            border-color: rgba(255, 255, 255, 0.5); 
+            box-shadow: 0 0 35px rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Grid de dos columnas */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 1.5rem 0;
+            align-items: center;
+        }
+        
+        /* Tarjetas de creadores */
+        .creators-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .creator-card {
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(8px);
+            border-radius: 24px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,215,0,0.3);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        .creator-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255,215,0,0.8);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            background: rgba(0,0,0,0.7);
+        }
+        .creator-name {
+            font-size: 1.6rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        .creator-role {
+            font-size: 1rem;
+            color: #FFD966;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        .creator-desc {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #FFE6B0, #FFB347, #FF8C42);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 600;
+        }
+        
+        /* ESTILO DE IMÁGENES */
+        .custom-image {
+            width: 100%;
+            height: auto;
+            max-height: 260px;
+            object-fit: cover;
+            border-radius: 20px;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        .custom-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 35px rgba(255,200,100,0.25);
+        }
+        
+        .image-container {
+            background: rgba(0,0,0,0.25);
+            border-radius: 20px;
+            padding: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* BOTONES ESTÁNDAR */
+        .btn-more {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.7rem 1.8rem;
+            border: 1px solid rgba(255,255,255,0.35);
+            border-radius: 60px;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(8px);
+            color: white;
+            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .btn-more:hover {
+            background: rgba(255,255,255,0.9);
+            color: #000;
+            transform: translateY(-2px);
+        }
+
+        /* BOTÓN DE YOUTUBE */
+        .youtube-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 1.5rem;
+            padding: 0.8rem 2rem;
+            background: #FF0000;
+            border-radius: 60px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(255,0,0,0.3);
+        }
+        .youtube-btn:hover {
+            transform: scale(1.05);
+            background: #CC0000;
+            box-shadow: 0 8px 25px rgba(255,0,0,0.5);
+        }
+
+        /* BOTÓN DE DISCORD */
+        .discord-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 2rem;
+            padding: 0.9rem 2.2rem;
+            background: linear-gradient(135deg, #5865F2, #404EED);
+            border-radius: 60px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .discord-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s, height 0.5s;
+        }
+        .discord-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        .discord-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(88,101,242,0.5);
+        }
+        .discord-btn svg {
+            width: 24px;
+            fill: white;
+        }
+
+        /* BOTÓN INFO WYLDER (nuevo) */
+        .wylder-info-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+            padding: 0.7rem 1.8rem;
+            border: 1px solid rgba(255,215,0,0.5);
+            border-radius: 60px;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(8px);
+            color: #FFD700;
+            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .wylder-info-btn:hover {
+            background: #FFD700;
+            color: #000;
+            border-color: #FFD700;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255,215,0,0.3);
+        }
+
+        /* Indicador de página */
+        .page-indicator {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 110;
+            display: flex;
+            gap: 12px;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(8px);
+            padding: 6px 18px;
+            border-radius: 40px;
+        }
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .dot.active {
+            width: 28px;
+            background: white;
+            box-shadow: 0 0 12px white;
+        }
+
+        /* SCROLLBAR */
+        .section::-webkit-scrollbar {
+            width: 4px;
+        }
+        .section::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.1);
+        }
+        .section::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.4);
+            border-radius: 4px;
+        }
+
+        /* ANIMACIONES */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .section.active h1, .section.active h2, .section.active p, 
+        .section.active .creators-grid, .section.active .two-col,
+        .section.active .discord-btn, .section.active .youtube-btn,
+        .section.active .wylder-info-btn {
+            animation: fadeUp 0.6s ease forwards;
+        }
+        .section.active h1 { animation-delay: 0s; }
+        .section.active h2 { animation-delay: 0.05s; }
+        .section.active p { animation-delay: 0.1s; }
+        .section.active .creators-grid { animation-delay: 0.15s; opacity: 0; animation-fill-mode: forwards; }
+        .section.active .two-col { animation-delay: 0.15s; opacity: 0; animation-fill-mode: forwards; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .two-col { grid-template-columns: 1fr; gap: 1.5rem; }
+            .creators-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .section { padding: 1rem 5%; }
+            .content-box { padding: 1.2rem; }
+            .nav-zone { width: 15%; }
+            .nav-zone span { font-size: 2rem; }
+            .lotus-title { font-size: 2.2rem !important; }
+            .discord-btn, .youtube-btn, .wylder-info-btn { font-size: 0.8rem; padding: 0.5rem 1rem; }
+            .creator-name { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-bg" id="bg-effect"></div>
+
+    <!-- Navegación -->
+    <div class="nav-zone nav-left" onclick="prev()"><span>‹</span></div>
+    <div class="nav-zone nav-right" onclick="next()"><span>›</span></div>
+    <div class="page-indicator" id="pageDots"></div>
+
+    <!-- Logo -->
+    <div class="fixed top-5 left-1/2 -translate-x-1/2 z-[110] flex flex-col items-center">
+        <img src="IconoTHE.gif" class="w-14 h-14 rounded-full mb-1 shadow-2xl" alt="Logo">
+        <span class="text-[9px] tracking-[0.5em] uppercase opacity-80">The Light is Amazing</span>
+    </div>
+
+    <!-- S1: HOME -->
+    <section id="s1" class="section active">
+        <h1 class="text-4xl md:text-7xl lotus-title mb-4">｡:ﾟ🪷 𝓣𝓱𝓮 𝓵𝓲𝓰𝓱𝓽 𝓲𝓼 𝓪𝓶𝓪𝔃𝓲𝓷𝓰 🪷ﾟ:｡</h1>
+        <p class="text-xs tracking-[1em] uppercase opacity-80">Creative Game & Cinema Studio</p>
+        <p class="text-sm mt-6 max-w-lg opacity-70">Explora nuestras divisiones →</p>
+        <a href="https://discord.gg/KQ6Fjma2W7" target="_blank" class="discord-btn">
+            <svg viewBox="0 0 127.14 96.36" width="20" height="20"><path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.86.68,1.75,1.36,2.66,2a68.42,68.42,0,0,1-10.87,5.18,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22C129.24,52.42,122.09,29.17,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S53.87,46,53.87,53,48.69,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.2,60,73.2,53s5-12.74,11.44-12.74S96.12,46,96.12,53,91,65.69,84.69,65.69Z"/></svg>
+            Únete a Discord
+        </a>
+    </section>
+
+    <!-- S2: MINECRAFT LYNS -->
+    <section id="s2" class="section">
+        <div class="content-box w-full">
+            <h2 class="text-xs tracking-[1em] uppercase opacity-60">Gaming Division</h2>
+            <h1 class="text-3xl md:text-5xl lotus-title mb-6">MINECRAFT LYNS</h1>
+            <div class="two-col">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-2"><span class="text-gradient">✨ LYNS NETWORK</span></h3>
+                    <p class="opacity-90 leading-relaxed">
+                        Contamos con un servidor llamado <strong class="text-gradient">LYNS NETWORK</strong>, una comunidad vibrante y profesional. 
+                        Nuestra modalidad estrella: <strong>LYNS SMP-OP</strong>, un survival multijugador semi anárquico donde la libertad y la creatividad se encuentran.
+                        ¡Únete a una experiencia única llena de construcciones épicas y alianzas inolvidables!
+                    </p>
+                </div>
+                <div class="image-container"><img src="lynsnet.jpg" class="custom-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'200\'%3E%3Crect width=\'400\' height=\'200\' fill=\'%23333\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23aaa\' dy=\'.3em\'%3Elynsnet.jpg%3C/text%3E%3C/svg%3E'"></div>
+            </div>
+            <div class="two-col">
+                <div class="image-container"><img src="lynstier.jpg" class="custom-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'200\'%3E%3Crect width=\'400\' height=\'200\' fill=\'%23333\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23aaa\' dy=\'.3em\'%3Elynstier.jpg%3C/text%3E%3C/svg%3E'"></div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-2"><span class="text-gradient">⚔️ LYNS TIERLIST</span></h3>
+                    <p class="opacity-90 leading-relaxed">
+                        ¿Te crees bueno en PvP? Puedes probarte en distintas modalidades de las 3 versiones: <strong>1.8 Java, 1.9+ y Bedrock</strong>. 
+                        Contamos con testers de alto nivel que te pondrán a prueba. ¡MUCHA SUERTE, guerrero!
+                    </p>
+                </div>
+            </div>
+            <a href="LynsNET.html" class="btn-more">⚡ + MÁS INFORMACIÓN SOBRE LYNS ⚡</a>
+        </div>
+    </section>
+
+    <!-- S3: ROBLOX -->
+    <section id="s3" class="section">
+        <div class="content-box w-full">
+            <h2 class="text-xs tracking-[1em] uppercase opacity-60">Coming Soon</h2>
+            <h1 class="text-3xl md:text-5xl lotus-title mb-6">ROBLOX GAMES LIGHT</h1>
+            <div class="two-col">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-2">🎮 Primer Juego: <span class="text-gradient">"Chill Vibes"</span></h3>
+                    <p class="opacity-90 leading-relaxed">
+                        Un juego de prueba diseñado para que disfrutes con amigos sin estrés. 
+                        Diversión casual, mecánicas sencillas y momentos alegres. Perfecto para relajarte después de un largo día.
+                        <br><br>
+                        <strong>Características:</strong> Mini-juegos cooperativos, entornos coloridos, personalización de avatar y eventos semanales. 
+                        Ideal para todas las edades. ¡Sin presión, solo diversión!
+                    </p>
+                    <a href="Robloxgame1.html" class="btn-more inline-block mt-4">🔍 Más info sobre Chill Vibes</a>
+                </div>
+                <div class="image-container"><img src="chiR.jpg" class="custom-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'200\'%3E%3Crect width=\'400\' height=\'200\' fill=\'%23333\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23aaa\' dy=\'.3em\'%3EchiR.jpg%3C/text%3E%3C/svg%3E'"></div>
+            </div>
+            <div class="two-col">
+                <div class="image-container"><img src="Honk.jpg" class="custom-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'200\'%3E%3Crect width=\'400\' height=\'200\' fill=\'%23333\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23aaa\' dy=\'.3em\'%3EHonk.jpg%3C/text%3E%3C/svg%3E'"></div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-2">🔍 Segundo Juego: <span class="text-gradient">"Ecos del Pasado"</span></h3>
+                    <p class="opacity-90 leading-relaxed">
+                        Una experiencia que mezcla <strong>puzzles, misterio, terror psicológico y comedia negra</strong>. 
+                        Eres un detective atrapado en una mansión que cambia su arquitectura cada noche. Resuelve acertijos, 
+                        descubre secretos oscuros y sobrevive a encuentros con entidades que alternan entre lo aterrador y lo absurdo.
+                        <br><br>
+                        <strong>Características:</strong> Narrativa ramificada, sistema de pistas, finales múltiples y un humor único que alivia la tensión.
+                    </p>
+                    <a href="Robloxgame2.html" class="btn-more inline-block mt-4">🔍 Más info sobre Ecos del Pasado</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- S4: GACHA GUIDE -->
+    <section id="s4" class="section">
+        <div class="content-box w-full text-center">
+            <h2 class="text-xs tracking-[1em] uppercase opacity-60">Estética AAA</h2>
+            <h1 class="text-4xl md:text-5xl lotus-title mb-4">GACHA GUIDE</h1>
+            <p class="text-2xl opacity-90"><span class="text-gradient">✨ Guía Definitiva de Gachas ✨</span></p>
+            <p class="mt-5 opacity-85 text-base max-w-2xl mx-auto leading-relaxed">
+                Aquí encontrarás análisis profundos de personajes, estrategias de pity, cálculos de probabilidad, 
+                tier lists actualizadas y guías de farmeo eficiente para los juegos gacha más populares: 
+                <strong>Genshin Impact, Honkai Star Rail, Zenless Zone Zero, Wuthering Waves y más</strong>.
+                <br><br>
+                Próximamente: comparativas de banners, planificadores de recursos y comunidades exclusivas para 
+                jugadores dedicados. ¡Prepárate para optimizar tus tiradas al máximo!
+            </p>
+            <div class="image-container max-w-md mx-auto mt-6"><img src="furiG.jpg" class="custom-image" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'200\'%3E%3Crect width=\'400\' height=\'200\' fill=\'%23333\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' fill=\'%23aaa\' dy=\'.3em\'%3EfuriG.jpg%3C/text%3E%3C/svg%3E'"></div>
+        </div>
+    </section>
+
+    <!-- S5: WYLDER STUDIO (con NUEVO BOTÓN de más información) -->
+    <section id="s5" class="section">
+        <div class="content-box w-full text-center">
+            <h2 class="text-xs tracking-[1em] uppercase opacity-60">Cinema Dept.</h2>
+            <h1 class="text-5xl md:text-7xl lotus-title mb-4" style="text-shadow: 0 0 20px gold; letter-spacing: 2px;">WYLDER STUDIO</h1>
+            <p class="max-w-3xl mx-auto text-base leading-relaxed opacity-90">
+                Donde la narrativa visual cobra vida. Especializados en cinematografía melancólica 
+                que busca capturar la esencia de la luz en cada fotograma. Nos dedicamos a la 
+                <strong class="text-gradient">producción cinematográfica, animación 2D/3D y doblaje profesional</strong>. 
+                Creamos cortometrajes, series animadas y proyectos audiovisuales con alma y estética única.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-4 justify-center">
+                <span class="px-4 py-1 bg-white/10 rounded-full">🎬 Cine</span>
+                <span class="px-4 py-1 bg-white/10 rounded-full">✨ Animación</span>
+                <span class="px-4 py-1 bg-white/10 rounded-full">🎙️ Doblaje</span>
+                <span class="px-4 py-1 bg-white/10 rounded-full">🎞️ Postproducción</span>
+            </div>
+            <div class="flex flex-wrap gap-4 justify-center mt-4">
+                <a href="https://www.youtube.com/@WYLDERSTUDIO" target="_blank" class="youtube-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                    Visita nuestro canal de YouTube
+                </a>
+                <!-- NUEVO BOTÓN para más información de Wylder Studio -->
+                <a href="WylderS.html" class="wylder-info-btn" target="_blank">🎬 + Más información sobre WYLDER STUDIO</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- S6: CREADORES -->
+    <section id="s6" class="section">
+        <div class="content-box w-full text-center">
+            <h2 class="text-xs tracking-[1em] uppercase opacity-60">El Corazón del Estudio</h2>
+            <h1 class="text-4xl md:text-6xl lotus-title mb-6">Nuestros Creadores</h1>
+            <div class="creators-grid">
+                <div class="creator-card">
+                    <div class="creator-name">Yiiph11</div>
+                    <div class="creator-role">🔹 Fundador & Desarrollador 🔹</div>
+                    <div class="creator-desc">Visionario, arquitecto de código y líder del proyecto. Da vida a las ideas con pasión y tecnología.</div>
+                </div>
+                <div class="creator-card">
+                    <div class="creator-name">Mandi</div>
+                    <div class="creator-role">🔸 Co‑fundador & Desarrollador 🔸</div>
+                    <div class="creator-desc">Experto en sistemas y creatividad. Construye mundos interactivos y optimiza la experiencia.</div>
+                </div>
+                <div class="creator-card">
+                    <div class="creator-name">Lyna</div>
+                    <div class="creator-role">💎 Diseñadora & Inversionista 💎</div>
+                    <div class="creator-desc">Mente artística que da forma a la identidad visual y el alma estética del estudio.</div>
+                </div>
+            </div>
+            <p class="mt-6 text-sm opacity-80">Ellos son la fuerza que impulsa cada píxel, cada línea de código y cada historia.</p>
+        </div>
+    </section>
+
+    <!-- S7: VISIÓN -->
+    <section id="s7" class="section">
+        <div class="content-box w-full text-center" style="border: 2px solid rgba(255,215,0,0.6); background: rgba(0,0,0,0.6);">
+            <h2 class="text-xs tracking-[1em] uppercase opacity-80">Our Vision</h2>
+            <h1 class="text-4xl md:text-6xl lotus-title mb-5" style="text-shadow: 0 0 15px gold;">✨ Nuestra Visión ✨</h1>
+            <p class="text-xl md:text-2xl font-light leading-relaxed max-w-4xl mx-auto">
+                <strong class="text-gradient">Hacer un cambio, crear algo único que llene de vida incluso a la propia vida.</strong><br>
+                Soñamos con una agencia del futuro, donde el arte y la tecnología se fusionen para inspirar al mundo.
+            </p>
+            <div class="mt-8 w-20 h-1 bg-gradient-to-r from-transparent via-yellow-500 to-transparent mx-auto"></div>
+        </div>
+    </section>
+
+    <script>
+        let cur = 1;
+        const total = 7;
+        let autoInterval = null, autoActive = false;
+
+        function generateDots() {
+            const container = document.getElementById('pageDots');
+            if (!container) return;
+            container.innerHTML = '';
+            for (let i = 1; i <= total; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                if (i === cur) dot.classList.add('active');
+                dot.addEventListener('click', () => { cur = i; update(); resetAutoScroll(); });
+                container.appendChild(dot);
+            }
+        }
+
+        function updateDots() {
+            document.querySelectorAll('.dot').forEach((dot, idx) => {
+                if (idx + 1 === cur) dot.classList.add('active');
+                else dot.classList.remove('active');
+            });
+        }
+
+        function update() {
+            const sections = document.querySelectorAll('.section');
+            const bg = document.getElementById('bg-effect');
+            sections.forEach((s, i) => {
+                const idx = i + 1;
+                s.classList.remove('active', 'exit');
+                if (idx === cur) s.classList.add('active');
+                else if (idx < cur) s.classList.add('exit');
+            });
+            if (bg) bg.style.transform = `scale(${1 + ((cur - 1) * 0.006)})`;
+            updateDots();
+        }
+
+        function next() { cur = cur >= total ? 1 : cur + 1; update(); }
+        function prev() { cur = cur <= 1 ? total : cur - 1; update(); }
+
+        function resetAutoScroll() { if (autoActive) { clearInterval(autoInterval); autoInterval = setInterval(() => next(), 8000); } }
+        // startAutoScroll();
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "ArrowRight") next();
+            if (e.key === "ArrowLeft") prev();
+        });
+
+        generateDots();
+        update();
+    </script>
+</body>
+</html>
