@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LYNS SMP - Servidor Minecraft SMP-OP</title>
+    <title>Lovely Flowers | Comunidad de Discord</title>
     <link rel="icon" href="IconoTHE.gif" type="image/gif">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -22,7 +22,6 @@
             overflow-x: hidden;
         }
 
-        /* FONDO ANIMADO */
         .anime-bg {
             position: fixed;
             top: 0;
@@ -35,7 +34,6 @@
             filter: brightness(0.35) contrast(1.1);
         }
 
-        /* Efecto de partículas */
         .snow-particles {
             position: fixed;
             top: 0;
@@ -58,7 +56,6 @@
             100% { transform: translateY(110vh) translateX(20px); opacity: 0; }
         }
 
-        /* Overlay de gradiente azul/cian */
         .bg-gradient-overlay {
             position: fixed;
             top: 0;
@@ -69,14 +66,12 @@
             z-index: -1;
         }
 
-        /* Contenedor principal */
         .container {
             max-width: 1300px;
             margin: 0 auto;
             padding: 2rem;
         }
 
-        /* Tarjetas con vidrio */
         .glass-card {
             background: rgba(0, 20, 35, 0.45);
             backdrop-filter: blur(16px);
@@ -110,7 +105,6 @@
         .glass-card:nth-child(7) { animation-delay: 0.65s; }
         .glass-card:nth-child(8) { animation-delay: 0.75s; }
 
-        /* Títulos en azul cian */
         .title-cyan {
             font-family: 'Playfair Display', serif;
             background: linear-gradient(135deg, #7DF9FF, #00B4D8, #0096C7);
@@ -125,7 +119,6 @@
             font-family: 'Playfair Display', serif;
         }
 
-        /* Tablas */
         .rank-table {
             width: 100%;
             border-collapse: collapse;
@@ -161,7 +154,6 @@
             font-weight: 600;
         }
 
-        /* Modalidades - badges */
         .mode-tag {
             display: inline-block;
             background: rgba(0, 180, 220, 0.1);
@@ -181,7 +173,6 @@
             border-color: rgba(0, 200, 240, 0.6);
         }
 
-        /* Botones */
         .btn-cyan {
             display: inline-block;
             background: linear-gradient(135deg, #00B4D8, #0077B6);
@@ -222,7 +213,6 @@
             color: #A0FFFF;
         }
 
-        /* Botón volver */
         .btn-back {
             display: inline-flex;
             align-items: center;
@@ -245,7 +235,6 @@
             border-color: #7DF9FF;
         }
 
-        /* Imágenes */
         .image-slot {
             background: rgba(0, 150, 200, 0.08);
             border: 1px dashed rgba(0, 180, 220, 0.4);
@@ -277,7 +266,6 @@
             gap: 2rem;
         }
 
-        /* Header */
         .header {
             position: sticky;
             top: 0;
@@ -309,211 +297,163 @@
 </head>
 <body>
 
-    <!-- Fondo -->
     <div class="anime-bg"></div>
     <div class="bg-gradient-overlay"></div>
     <div class="snow-particles" id="snowParticles"></div>
 
-    <!-- Header -->
     <div class="header">
         <div class="container mx-auto flex flex-wrap justify-between items-center gap-4">
             <div class="flex items-center gap-3">
                 <a href="index.html" class="btn-back">← Volver al inicio</a>
                 <img src="IconoTHE.gif" class="w-12 h-12 rounded-full shadow-lg" alt="Logo">
-                <span class="text-xl font-bold title-cyan tracking-wide">LYNS SMP</span>
+                <span class="text-xl font-bold title-cyan tracking-wide">Lovely Flowers</span>
             </div>
             <div class="flex gap-6">
-                <a href="#servidor" class="text-white/60 hover:text-cyan-300 transition duration-300">Servidor</a>
-                <a href="#tierlist" class="text-white/60 hover:text-cyan-300 transition duration-300">Tier List</a>
-                <a href="#testeos" class="text-white/60 hover:text-cyan-300 transition duration-300">Testeos</a>
-                <a href="#tienda" class="text-white/60 hover:text-cyan-300 transition duration-300">Tienda</a>
+                <a href="#comunidad" class="text-white/60 hover:text-cyan-300 transition duration-300">Comunidad</a>
+                <a href="#eventos" class="text-white/60 hover:text-cyan-300 transition duration-300">Eventos</a>
+                <a href="#roles" class="text-white/60 hover:text-cyan-300 transition duration-300">Roles</a>
+                <a href="#unirse" class="text-white/60 hover:text-cyan-300 transition duration-300">Unirse</a>
             </div>
         </div>
     </div>
 
     <div class="container">
-        <!-- Sección principal: Servidor -->
-        <div id="servidor" class="glass-card">
+        <!-- Hero Comunidad -->
+        <div id="comunidad" class="glass-card">
             <div class="grid-2">
                 <div>
-                    <h1 class="text-5xl md:text-6xl title-cyan mb-4">MINECRAFT LYNS</h1>
+                    <h1 class="text-5xl md:text-6xl title-cyan mb-4">Lovely Flowers</h1>
                     <p class="text-lg leading-relaxed opacity-85">
-                        Un servidor <strong class="text-cyan-300">SMP-OP semi anárquico</strong> con una <strong class="text-cyan-300">temática medieval épica</strong>. 
-                        Libertad total para construir, destruir y forjar tu leyenda.
+                        Una comunidad cálida y acogedora para los amantes del doblaje, el cine y la animación. 
+                        Únete a nuestro Discord y comparte tu pasión con personas de ideas afines.
                     </p>
                     <div class="mt-6 space-y-2">
-                        <div><span class="text-cyan-300 font-bold">⚔️ Modalidad:</span> SMP-OP (Supervivencia con mecánicas únicas)</div>
-                        <div><span class="text-cyan-300 font-bold">📖 Capítulos:</span> Beta + Prólogo + 6 Capítulos principales (cada uno con expansión propia)</div>
-                        <div><span class="text-cyan-300 font-bold">🌍 Plataformas:</span> Java & Bedrock (Crossplay)</div>
-                        <div><span class="text-cyan-300 font-bold">📡 IP:</span> <code class="bg-black/40 px-2 py-1 rounded text-cyan-300">lynssmp.pracc.club</code></div>
-                        <div><span class="text-cyan-300 font-bold">🔌 Puerto (Bedrock):</span> <code class="bg-black/40 px-2 py-1 rounded text-cyan-300">17636</code></div>
+                        <div><span class="text-cyan-300 font-bold">🌸 Comunidad:</span> Oficial de Wylder Creative Studio</div>
+                        <div><span class="text-cyan-300 font-bold">💬 Plataforma:</span> Discord</div>
+                        <div><span class="text-cyan-300 font-bold">🎯 Enfoque:</span> Doblaje, cine, animación y gaming</div>
+                        <div><span class="text-cyan-300 font-bold">🔗 Invitación:</span> <code class="bg-black/40 px-2 py-1 rounded text-cyan-300">https://discord.gg/uTfGPFzZzD</code></div>
                     </div>
                     <div class="mt-6 flex flex-wrap gap-4">
-                        <a href="#" class="btn-cyan" id="copyIpBtn">🔌 Copiar IP</a>
-                        <a href="https://lynstierlist.netlify.app/" target="_blank" class="btn-outline-cyan">🏆 Ver Tier List Online</a>
+                        <a href="https://discord.gg/uTfGPFzZzD" target="_blank" class="btn-cyan">🌸 Unirse a Lovely Flowers</a>
                     </div>
                 </div>
                 <div>
                     <div class="image-slot">
-                        <img src="mclyn.jpg" alt="Banner del servidor" onerror="this.src='https://placehold.co/400x250/0a2a3a/00ccdd?text=LYNS+Banner'">
+                        <img src="mclyn.jpg" alt="Lovely Flowers" onerror="this.src='https://placehold.co/400x250/0a2a3a/00ccdd?text=Lovely+Flowers'">
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Sección: Filosofía y Capítulos -->
+        <!-- Sobre la comunidad -->
         <div class="glass-card">
             <div class="grid-2">
                 <div>
                     <div class="image-slot">
-                        <img src="mcfilo.jpg" alt="Filosofía del servidor" onerror="this.src='https://placehold.co/400x250/0a2a3a/00ccdd?text=Nuestra+Filosofía'">
+                        <img src="mcfilo.jpg" alt="Nuestra comunidad" onerror="this.src='https://placehold.co/400x250/0a2a3a/00ccdd?text=Nuestra+Comunidad'">
                     </div>
                 </div>
                 <div>
-                    <h2 class="text-3xl title-cyan mb-3">📖 Nuestra Filosofía</h2>
+                    <h2 class="text-3xl title-cyan mb-3">🌸 ¿Qué es Lovely Flowers?</h2>
                     <p class="leading-relaxed opacity-85">
-                        <strong class="text-cyan-300">"Cada paso que das construye tu leyenda. La perseverancia y el trabajo en equipo son las claves."</strong>
-                        <br><br>
-                        Cada capítulo traerá una expansión temática, nuevas mazmorras, eventos y recompensas exclusivas. 
-                        La historia del servidor evoluciona con tus acciones.
+                        Lovely Flowers es el espacio oficial de Discord de Wylder Creative Studio. Aquí podrás:
                     </p>
-                    <div class="mt-5">
-                        <h3 class="text-xl font-semibold text-cyan-300">⚔️ Próximos Capítulos:</h3>
-                        <ul class="list-disc list-inside mt-2 space-y-1 opacity-75">
-                            <li>🔸 Beta – Los Orígenes</li>
-                            <li>🔸 Prólogo – El Despertar</li>
-                            <li>🔸 Capítulo I – Tierras Olvidadas</li>
-                            <li>🔸 Capítulo II – El Imperio de Fuego</li>
-                            <li>🔸 Capítulo III – Susurros del Abismo</li>
-                            <li>🔸 Capítulo IV – La Última Alianza</li>
-                            <li>🔸 Capítulo V – El Crepúsculo de los Dioses</li>
-                            <li>🔸 Capítulo VI – Renacer (Final épico)</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Sección: TIER LIST -->
-        <div id="tierlist" class="glass-card">
-            <h2 class="text-4xl title-cyan text-center mb-2">✦ LYNS TIER LIST ✦</h2>
-            <p class="text-center text-lg mb-2">☀️ with great power comes great ranking ☾</p>
-            <p class="text-center opacity-75 mb-6">Bienvenido al sistema de ranking oficial. Cada jugador es evaluado en diferentes modalidades de PvP para determinar su verdadero nivel.</p>
-
-            <h3 class="text-2xl font-bold text-cyan-300 mt-6 mb-3">☀️ RANGOS LY (LYNX ELITE)</h3>
-            <table class="rank-table">
-                <thead>
-                    <tr><th>Rango</th><th>Nombre</th><th>Significado</th><th>Capacidad</th><th>Puntos</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td class="ly-rank font-bold">LY1</td><td class="ly-rank">Lynx Primus</td><td>El Primero de Lynx</td><td>5</td><td class="ly-rank">55 pts</td></tr>
-                    <tr><td class="ly-rank font-bold">LY2</td><td class="ly-rank">Lynx Aeternus</td><td>Los Eternos</td><td>150</td><td class="ly-rank">44 pts</td></tr>
-                    <tr><td class="ly-rank font-bold">LY3</td><td class="ly-rank">Lynx Dominus</td><td>Los Dominantes</td><td>300</td><td class="ly-rank">33 pts</td></tr>
-                    <tr><td class="ly-rank font-bold">LY4</td><td class="ly-rank">Lynx Imperium</td><td>El Imperio</td><td>500</td><td class="ly-rank">22 pts</td></tr>
-                    <tr><td class="ly-rank font-bold">LY5</td><td class="ly-rank">Lynx Vindicta</td><td>La Venganza</td><td>800</td><td class="ly-rank">11 pts</td></tr>
-                </tbody>
-            </table>
-            <p class="text-sm italic opacity-60">Solo 5 jugadores pueden estar en LY1 simultáneamente.</p>
-
-            <h3 class="text-2xl font-bold text-gray-300 mt-8 mb-3">☾ RANGOS LA (LYNX AUXILIARY)</h3>
-            <table class="rank-table">
-                <thead>
-                    <tr><th>Rango</th><th>Nombre</th><th>Significado</th><th>Capacidad</th><th>Puntos</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td class="la-rank font-bold">LA1</td><td class="la-rank">Lynx Fortis</td><td>Los Fuertes</td><td>∞</td><td class="la-rank">7 pts</td></tr>
-                    <tr><td class="la-rank font-bold">LA2</td><td class="la-rank">Lynx Audax</td><td>Los Audaces</td><td>∞</td><td class="la-rank">5 pts</td></tr>
-                    <tr><td class="la-rank font-bold">LA3</td><td class="la-rank">Lynx Ferox</td><td>Los Feroces</td><td>∞</td><td class="la-rank">3 pts</td></tr>
-                    <tr><td class="la-rank font-bold">LA4</td><td class="la-rank">Lynx Vigil</td><td>Los Vigilantes</td><td>∞</td><td class="la-rank">1 pt</td></tr>
-                    <tr><td class="la-rank font-bold">LA5</td><td class="la-rank">Lynx Initium</td><td>El Inicio</td><td>∞</td><td class="la-rank">0 pts</td></tr>
-                </tbody>
-            </table>
-
-            <h3 class="text-2xl title-cyan mt-8 mb-3">🎮 MODALIDADES DE PVP (9 activas)</h3>
-            <div class="flex flex-wrap justify-center gap-2 mb-6">
-                <span class="mode-tag">OVERALL</span><span class="mode-tag">LTMS</span><span class="mode-tag">VANILLA</span><span class="mode-tag">UHC</span>
-                <span class="mode-tag">POT</span><span class="mode-tag">NETHOP</span><span class="mode-tag">SMP</span><span class="mode-tag">SWORD</span>
-                <span class="mode-tag">AXE</span><span class="mode-tag">MACE</span>
-            </div>
-            <p class="text-center text-sm opacity-70">Cada modalidad tiene su propio rango y puntos. El <strong class="text-cyan-300">OVERALL</strong> es la suma total.</p>
-
-            <div class="mt-8 text-center">
-                <a href="https://lynstierlist.netlify.app/" target="_blank" class="btn-cyan">🏆 VER TIER LIST COMPLETA EN NETLIFY</a>
-            </div>
-        </div>
-
-        <!-- Sección: CÓMO SER TESTEADO -->
-        <div id="testeos" class="glass-card">
-            <div class="grid-2">
-                <div>
-                    <h2 class="text-3xl title-cyan mb-4">🧪 ¿CÓMO SER TESTEADO?</h2>
-                    <p class="leading-relaxed mb-4">
-                        Los testeos son realizados exclusivamente por el equipo <strong class="text-cyan-300">@˚⊱⚙️𝓣𝓮𝓼𝓽𝓮𝓻𝓼⊰˚</strong>.
-                    </p>
-                    <ol class="list-decimal list-inside space-y-2 opacity-85">
-                        <li>Espera a que un tester anuncie una sesión de testeo en el Discord.</li>
-                        <li>Enfréntate a otros jugadores o directamente a los testers.</li>
-                        <li>Tu rendimiento determinará tu rango y puntos en cada modalidad.</li>
-                    </ol>
-                    <p class="mt-4 text-sm bg-cyan-400/5 p-3 rounded-xl border border-cyan-400/20">
-                        ⚠️ <strong>Solo los testers oficiales pueden realizar testeos.</strong>
-                    </p>
-                </div>
-                <div>
-                    <div class="image-slot">
-                        <img src="shokvsiro.jpg" alt="Equipo de testers" onerror="this.src='https://placehold.co/400x250/0a2a3a/00ccdd?text=Equipo+Testers'">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Sección: CÓMO SUBIR DE RANGO -->
-        <div class="glass-card">
-            <div class="grid-2">
-                <div>
-                    <div class="image-slot">
-                        <img src="cherrymc.gif" alt="Progresión de rangos" onerror="this.src='https://placehold.co/400x250/0a2a3a/00ccdd?text=Subir+de+Rango'">
-                    </div>
-                </div>
-                <div>
-                    <h2 class="text-3xl title-cyan mb-4">📈 ¿CÓMO SUBIR DE RANGO?</h2>
-                    <ul class="space-y-3 opacity-85">
-                        <li>✔️ Gana peleas contra jugadores de rango similar o superior.</li>
-                        <li>✔️ Muestra consistencia y dominio en las distintas modalidades.</li>
-                        <li>✔️ Participa en torneos internos organizados por la comunidad.</li>
-                        <li>✔️ Cada testeo puede hacerte subir o bajar según tu rendimiento.</li>
+                    <ul class="list-disc list-inside mt-2 space-y-1 opacity-75">
+                        <li>🔹 Conocer a los actores de doblaje y al equipo de producción.</li>
+                        <li>🔹 Participar en castings y proyectos colaborativos.</li>
+                        <li>🔹 Disfrutar de eventos exclusivos y sorteos.</li>
+                        <li>🔹 Compartir tus trabajos y recibir retroalimentación.</li>
+                        <li>🔹 Hacer nuevos amigos con intereses similares.</li>
                     </ul>
-                    <p class="mt-6 italic text-cyan-400/70">"La constancia y el esfuerzo te llevarán a la cima."</p>
                 </div>
             </div>
         </div>
 
-        <!-- Sección: TIENDA -->
-        <div id="tienda" class="glass-card text-center">
-            <h2 class="text-3xl title-cyan mb-3">🛒 LYNS STORE</h2>
-            <p class="mb-5 opacity-80">Rangos exclusivos, llaves de cofres, cosméticos y mucho más para potenciar tu experiencia en el servidor.</p>
-            <div class="flex flex-wrap gap-4 justify-center">
-                <a href="#" class="btn-cyan" id="storeBtn">✨ Visitar Tienda Oficial ✨</a>
-            </div>
-            <div class="mt-5 image-slot max-w-md mx-auto">
-                <img src="mirimiri.gif" alt="Tienda" onerror="this.src='https://placehold.co/300x150/0a2a3a/00ccdd?text=LYNS+STORE'">
+        <!-- Eventos -->
+        <div id="eventos" class="glass-card">
+            <h2 class="text-4xl title-cyan text-center mb-2">🎉 Eventos de la Comunidad</h2>
+            <p class="text-center opacity-75 mb-6">Organizamos actividades periódicas para mantener activa y entretenida a la comunidad.</p>
+            <div class="grid-2">
+                <div>
+                    <h3 class="text-2xl font-bold text-cyan-300 mt-6 mb-3">Próximos Eventos</h3>
+                    <table class="rank-table">
+                        <thead>
+                            <tr><th>Evento</th><th>Fecha</th><th>Descripción</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td class="ly-rank font-bold">Noche de Cine</td><td class="ly-rank">Viernes</td><td>Proyección de cortometrajes y películas dobladas por el estudio.</td></tr>
+                            <tr><td class="ly-rank font-bold">Casting Abierto</td><td class="ly-rank">Próximamente</td><td>Oportunidad para unirte al equipo de doblaje.</td></tr>
+                            <tr><td class="ly-rank font-bold">Torneo de Gaming</td><td class="ly-rank">Sábado</td><td>Competencias en Minecraft y otros juegos.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-300 mt-6 mb-3">Eventos Pasados</h3>
+                    <table class="rank-table">
+                        <thead>
+                            <tr><th>Evento</th><th>Fecha</th><th>Descripción</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td class="la-rank font-bold">AMAs con el Staff</td><td class="la-rank">Mes pasado</td><td>Sesión de preguntas y respuestas con los fundadores.</td></tr>
+                            <tr><td class="la-rank font-bold">Concurso de Fanart</td><td class="la-rank">Mes pasado</td><td>Los miembros enviaron sus ilustraciones inspiradas en nuestros proyectos.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
 
-        <!-- Sección Discord -->
+        <!-- Roles -->
+        <div id="roles" class="glass-card">
+            <h2 class="text-3xl title-cyan text-center mb-6">🏅 Roles en Discord</h2>
+            <div class="flex flex-wrap justify-center gap-2 mb-6">
+                <span class="mode-tag">🌸 Fundador</span>
+                <span class="mode-tag">🎙️ Director de Doblaje</span>
+                <span class="mode-tag">🎭 Actor/Actriz</span>
+                <span class="mode-tag">🎨 Artista</span>
+                <span class="mode-tag">🎮 Gamer</span>
+                <span class="mode-tag">💬 Miembro Activo</span>
+                <span class="mode-tag">👀 Espectador</span>
+            </div>
+            <p class="text-center text-sm opacity-70">Cada rol tiene beneficios y accesos especiales dentro del servidor.</p>
+        </div>
+
+        <!-- Cómo unirse -->
+        <div id="unirse" class="glass-card">
+            <div class="grid-2">
+                <div>
+                    <h2 class="text-3xl title-cyan mb-4">📩 ¿Cómo unirse?</h2>
+                    <ol class="list-decimal list-inside space-y-2 opacity-85">
+                        <li>Haz clic en el botón "Unirse a Lovely Flowers".</li>
+                        <li>Serás redirigido a Discord.</li>
+                        <li>Acepta la invitación y completa la verificación.</li>
+                        <li>Lee las reglas y preséntate en el canal de bienvenida.</li>
+                        <li>¡Disfruta de la comunidad!</li>
+                    </ol>
+                </div>
+                <div>
+                    <div class="image-slot">
+                        <img src="shokvsiro.jpg" alt="Unirse" onerror="this.src='https://placehold.co/400x250/0a2a3a/00ccdd?text=Únete'">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Llamada a la acción -->
         <div class="glass-card text-center">
-            <h2 class="text-3xl title-cyan mb-2">🎮 Comunidad Activa</h2>
-            <p class="mb-6 opacity-80">Únete a nuestro Discord para enterarte de eventos, testeos y novedades.</p>
-            <a href="https://discord.gg/KQ6Fjma2W7" target="_blank" class="btn-cyan">🎮 Únete a nuestro Discord</a>
+            <h2 class="text-3xl title-cyan mb-3">🌸 Únete a Lovely Flowers</h2>
+            <p class="mb-5 opacity-80">Te esperamos con los brazos abiertos en nuestro Discord.</p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="https://discord.gg/uTfGPFzZzD" target="_blank" class="btn-cyan">🌸 Invitación a Lovely Flowers</a>
+                <a href="index.html" class="btn-outline-cyan">Volver al inicio</a>
+            </div>
         </div>
     </div>
 
     <div class="footer">
-        <p class="opacity-50 text-sm">LYNS SMP - Un servidor donde la luz y la sombra se enfrentan. <br> © 2026 - Todos los derechos reservados.</p>
+        <p class="opacity-50 text-sm">Lovely Flowers - Comunidad oficial de Wylder Creative Studio. <br> © 2026 - Todos los derechos reservados.</p>
     </div>
 
     <script>
-        // Partículas
         function createSnow() {
             const container = document.getElementById('snowParticles');
             const count = 80;
@@ -531,28 +471,6 @@
             }
         }
         createSnow();
-
-        // Copiar IP
-        function copyIP() {
-            navigator.clipboard.writeText("lynssmp.pracc.club");
-            alert("✓ ¡IP copiada! lynssmp.pracc.club");
-        }
-        const copyBtn = document.getElementById('copyIpBtn');
-        if (copyBtn) {
-            copyBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                copyIP();
-            });
-        }
-
-        // Tienda
-        const storeBtn = document.getElementById('storeBtn');
-        if (storeBtn) {
-            storeBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                alert("🚀 Tienda próximamente disponible. ¡Sigue atento a nuestras redes!");
-            });
-        }
     </script>
 </body>
 </html>
