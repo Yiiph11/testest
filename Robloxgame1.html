@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Los downys | Próximamente en Roblox</title>
+    <title>Wylder Creative Studio | Términos y Condiciones</title>
     <link rel="icon" href="IconoTHE.gif" type="image/gif">
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -22,7 +22,6 @@
             overflow-x: hidden;
         }
 
-        /* Fondo fijo con imagen (cambia la URL por tu imagen) */
         .fixed-bg {
             position: fixed;
             top: 0;
@@ -34,7 +33,6 @@
             z-index: -3;
         }
 
-        /* Overlay oscuro (azul muy oscuro) */
         .overlay {
             position: fixed;
             top: 0;
@@ -45,7 +43,6 @@
             z-index: -2;
         }
 
-        /* Partículas flotantes en tonos cian y morado */
         .particles {
             position: fixed;
             top: 0;
@@ -70,14 +67,12 @@
             100% { transform: translateY(-20vh) translateX(40px); opacity: 0; }
         }
 
-        /* Contenedor principal */
         .container-custom {
             max-width: 1300px;
             margin: 0 auto;
             padding: 2rem;
         }
 
-        /* Tarjetas glassmorfismo - bordes cian/morado */
         .glass-card {
             background: rgba(10, 15, 30, 0.45);
             backdrop-filter: blur(16px);
@@ -102,14 +97,12 @@
             box-shadow: 0 25px 40px rgba(0, 212, 255, 0.15);
         }
 
-        /* Delay escalonado */
         .glass-card:nth-child(1) { animation-delay: 0.05s; }
         .glass-card:nth-child(2) { animation-delay: 0.15s; }
         .glass-card:nth-child(3) { animation-delay: 0.25s; }
         .glass-card:nth-child(4) { animation-delay: 0.35s; }
         .glass-card:nth-child(5) { animation-delay: 0.45s; }
 
-        /* Títulos con gradiente cian, morado, azul oscuro */
         .title-gradient {
             background: linear-gradient(135deg, #00D4FF, #9B59B6, #2C3E50);
             background-clip: text;
@@ -123,7 +116,6 @@
             font-family: 'Space Grotesk', 'Inter', sans-serif;
         }
 
-        /* Botón principal (cian a morado) */
         .btn-primary {
             display: inline-flex;
             align-items: center;
@@ -146,7 +138,6 @@
             background: linear-gradient(135deg, #00D4FF, #9B59B6);
         }
 
-        /* Botón secundario (outline) - color morado */
         .btn-outline {
             display: inline-flex;
             align-items: center;
@@ -169,7 +160,6 @@
             color: #E8DAEF;
         }
 
-        /* Botón volver */
         .btn-back {
             display: inline-flex;
             align-items: center;
@@ -193,7 +183,6 @@
             color: #D2B4DE;
         }
 
-        /* Badges de características */
         .feature-badge {
             display: inline-block;
             background: rgba(0, 212, 255, 0.1);
@@ -214,7 +203,6 @@
             color: white;
         }
 
-        /* Grid */
         .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -222,7 +210,6 @@
             align-items: center;
         }
 
-        /* Marco de imágenes */
         .image-frame {
             background: rgba(0, 150, 200, 0.05);
             border-radius: 28px;
@@ -247,7 +234,6 @@
             transform: scale(1.02);
         }
 
-        /* Sección de lanzamiento */
         .launch-message {
             background: rgba(0, 212, 255, 0.05);
             border-radius: 32px;
@@ -257,7 +243,6 @@
             backdrop-filter: blur(4px);
         }
 
-        /* FAQ */
         .faq-item {
             background: rgba(10, 15, 30, 0.5);
             border-radius: 20px;
@@ -296,7 +281,7 @@
         }
 
         .faq-item.active .faq-answer {
-            max-height: 200px;
+            max-height: 500px;
             padding: 0 1.5rem 1.2rem 1.5rem;
         }
 
@@ -304,7 +289,6 @@
             transform: rotate(180deg);
         }
 
-        /* Header */
         .header {
             position: sticky;
             top: 0;
@@ -332,188 +316,159 @@
 </head>
 <body>
 
-    <!-- Fondo fijo (cambia la URL por tu imagen) -->
     <div class="fixed-bg"></div>
     <div class="overlay"></div>
     <div class="particles" id="particles"></div>
 
-    <!-- Header -->
     <div class="header">
         <div class="container-custom mx-auto flex flex-wrap justify-between items-center gap-4">
             <div class="flex items-center gap-3">
                 <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Volver al inicio</a>
                 <img src="IconoTHE.gif" class="w-12 h-12 rounded-full shadow-lg" alt="Logo">
-                <span class="text-xl font-bold title-gradient tracking-wide">Los Downys</span>
+                <span class="text-xl font-bold title-gradient tracking-wide">Wylder Creative Studio</span>
             </div>
             <div class="flex gap-4">
-                <a href="https://discord.gg/KQ6Fjma2W7" target="_blank" class="text-white/70 hover:text-cyan-300 transition duration-300"><i class="fab fa-discord"></i> Discord</a>
-                <a href="#faq" class="text-white/70 hover:text-purple-300 transition duration-300">FAQ</a>
+                <a href="https://discord.gg/j5vgSJp8ZB" target="_blank" class="text-white/70 hover:text-cyan-300 transition duration-300"><i class="fab fa-discord"></i> Discord</a>
+                <a href="#terminos" class="text-white/70 hover:text-purple-300 transition duration-300">Términos</a>
+                <a href="#reglas" class="text-white/70 hover:text-purple-300 transition duration-300">Reglas</a>
             </div>
         </div>
     </div>
 
     <div class="container-custom">
-        <!-- Hero Section -->
-        <div class="glass-card">
+        <!-- Hero: Términos y Condiciones -->
+        <div class="glass-card" id="terminos">
             <div class="grid-2">
                 <div>
                     <div class="flex items-center gap-2 mb-3">
-                        <span class="px-3 py-1 bg-cyan-500/20 rounded-full text-cyan-300 text-xs">Próximamente en Roblox</span>
+                        <span class="px-3 py-1 bg-cyan-500/20 rounded-full text-cyan-300 text-xs">Legal</span>
                     </div>
-                    <h1 class="text-5xl md:text-6xl title-gradient mb-4">Los Downys</h1>
+                    <h1 class="text-5xl md:text-6xl title-gradient mb-4">Términos y Condiciones</h1>
                     <p class="text-lg leading-relaxed opacity-85 mb-6">
-                        El juego de prueba definitivo para disfrutar con amigos sin estrés. 
-                        Diversión casual, mecánicas sencillas y momentos alegres. Perfecto para relajarte después de un largo día.
+                        Al acceder y utilizar los servicios de Wylder Creative Studio, aceptas los siguientes términos y condiciones. 
+                        Por favor, léelos detenidamente antes de participar en cualquiera de nuestros proyectos o comunidades.
                     </p>
                     <div class="flex flex-wrap gap-3 mb-6">
-                        <span class="feature-badge"><i class="fas fa-users"></i> Cooperativo</span>
-                        <span class="feature-badge"><i class="fas fa-gamepad"></i> Minijuegos</span>
-                        <span class="feature-badge"><i class="fas fa-face-smile"></i> Sin estrés</span>
-                        <span class="feature-badge"><i class="fas fa-calendar-week"></i> Eventos semanales</span>
-                    </div>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#" class="btn-primary" id="remindBtn"><i class="fas fa-bell"></i> Recordar lanzamiento</a>
-                        <a href="https://discord.gg/KQ6Fjma2W7" target="_blank" class="btn-outline"><i class="fab fa-discord"></i> Comunidad</a>
+                        <span class="feature-badge"><i class="fas fa-file-contract"></i> Contrato</span>
+                        <span class="feature-badge"><i class="fas fa-shield-alt"></i> Protección</span>
+                        <span class="feature-badge"><i class="fas fa-gavel"></i> Legalidad</span>
                     </div>
                 </div>
                 <div>
                     <div class="image-frame">
-                        <img src="memeR.jpg" alt="Los Downys - Juego de Roblox" onerror="this.src='https://placehold.co/600x400/0a1525/00D4FF?text=Chill+Vibes'">
+                        <img src="memeR.jpg" alt="Términos y Condiciones" onerror="this.src='https://placehold.co/600x400/0a1525/00D4FF?text=Términos+y+Condiciones'">
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Características detalladas -->
+        <!-- Sección de Términos -->
         <div class="glass-card">
+            <h2 class="text-3xl title-gradient mb-4">📜 Términos Generales</h2>
+            <ul class="space-y-4">
+                <li class="flex gap-3 items-start">
+                    <i class="fas fa-check-circle text-cyan-400 mt-1"></i>
+                    <div><strong class="text-cyan-300">1. Aceptación</strong><br>Al unirte a nuestro Discord o participar en proyectos, aceptas estos términos en su totalidad.</div>
+                </li>
+                <li class="flex gap-3 items-start">
+                    <i class="fas fa-check-circle text-cyan-400 mt-1"></i>
+                    <div><strong class="text-cyan-300">2. Propiedad Intelectual</strong><br>Todo el contenido producido por Wylder Creative Studio (doblajes, animaciones, música, etc.) es propiedad exclusiva del estudio, a menos que se indique lo contrario.</div>
+                </li>
+                <li class="flex gap-3 items-start">
+                    <i class="fas fa-check-circle text-cyan-400 mt-1"></i>
+                    <div><strong class="text-cyan-300">3. Uso del Contenido</strong><br>No está permitida la redistribución no autorizada de nuestro material sin consentimiento previo por escrito.</div>
+                </li>
+                <li class="flex gap-3 items-start">
+                    <i class="fas fa-check-circle text-cyan-400 mt-1"></i>
+                    <div><strong class="text-cyan-300">4. Modificaciones</strong><br>Nos reservamos el derecho de modificar estos términos en cualquier momento. Los cambios serán notificados en nuestro servidor de Discord.</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Reglas -->
+        <div class="glass-card" id="reglas">
+            <h2 class="text-3xl title-gradient mb-4">🚫 Reglas de la Empresa</h2>
             <div class="grid-2">
-                <div class="order-2 md:order-1">
-                    <div class="image-frame">
-                        <img src="memer2.jpg" alt="Gameplay de Los Downys" onerror="this.src='https://placehold.co/600x400/0a1525/9B59B6?text=Gameplay'">
-                    </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-cyan-300 mb-3">Reglas de Conducta</h3>
+                    <ul class="space-y-2 opacity-80">
+                        <li>• Respeto mutuo entre todos los miembros.</li>
+                        <li>• Prohibido el acoso, discriminación o lenguaje ofensivo.</li>
+                        <li>• No compartir contenido inapropiado o ilegal.</li>
+                        <li>• No hacer spam ni autopromoción excesiva.</li>
+                        <li>• Cumplir con las indicaciones del staff.</li>
+                    </ul>
                 </div>
-                <div class="order-1 md:order-2">
-                    <h2 class="text-3xl title-gradient mb-4">✨ Características</h2>
-                    <ul class="space-y-4">
-                        <li class="flex gap-3 items-start">
-                            <i class="fas fa-crown text-cyan-400 mt-1"></i>
-                            <div><strong class="text-cyan-300">Minijuegos cooperativos</strong><br>Juega con amigos en modos diseñados para trabajar en equipo.</div>
-                        </li>
-                        <li class="flex gap-3 items-start">
-                            <i class="fas fa-palette text-purple-400 mt-1"></i>
-                            <div><strong class="text-purple-300">Personalización de avatar</strong><br>Desbloquea cosméticos divertidos a medida que avanzas.</div>
-                        </li>
-                        <li class="flex gap-3 items-start">
-                            <i class="fas fa-calendar-alt text-cyan-400 mt-1"></i>
-                            <div><strong class="text-cyan-300">Eventos semanales</strong><br>Actividades especiales cada semana con recompensas exclusivas.</div>
-                        </li>
-                        <li class="flex gap-3 items-start">
-                            <i class="fas fa-music text-purple-400 mt-1"></i>
-                            <div><strong class="text-purple-300">Banda sonora original</strong><br>Música relajante creada especialmente para la experiencia Los Downys.</div>
-                        </li>
+                <div>
+                    <h3 class="text-xl font-semibold text-cyan-300 mb-3">Reglas de Proyectos</h3>
+                    <ul class="space-y-2 opacity-80">
+                        <li>• No filtrar material confidencial de proyectos en desarrollo.</li>
+                        <li>• Los actores de doblaje deben seguir las directrices del director.</li>
+                        <li>• Cualquier incumplimiento puede resultar en expulsión.</li>
+                        <li>• La participación en proyectos es voluntaria, pero requiere compromiso.</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!-- Lanzamiento (mensaje sin fecha) -->
+        <!-- No nos hacemos cargo -->
         <div class="glass-card text-center">
-            <h2 class="text-3xl title-gradient mb-3">🎮 Fecha de lanzamiento</h2>
+            <h2 class="text-3xl title-gradient mb-3">⚠️ Limitación de Responsabilidad</h2>
             <div class="launch-message max-w-2xl mx-auto">
-                <i class="fas fa-hourglass-half text-3xl text-cyan-400 mb-3 block"></i>
-                <p class="text-lg mb-2">La fecha de lanzamiento aún no está definida.</p>
-                <p class="opacity-80">Únete a nuestro Discord para ser el primero en enterarte de las novedades y acceder a la beta cerrada.</p>
-                <div class="mt-4">
-                    <a href="https://discord.gg/KQ6Fjma2W7" target="_blank" class="btn-primary"><i class="fab fa-discord"></i> Unirse a Discord</a>
-                </div>
+                <i class="fas fa-exclamation-triangle text-3xl text-amber-400 mb-3 block"></i>
+                <p class="text-lg mb-2">No nos hacemos cargo de:</p>
+                <ul class="text-left opacity-80 space-y-2">
+                    <li>• Pérdida de datos o daños derivados del uso de nuestros servicios.</li>
+                    <li>• Malentendidos o conflictos entre miembros de la comunidad.</li>
+                    <li>• Contenido generado por usuarios que viole derechos de terceros.</li>
+                    <li>• Consecuencias legales por incumplimiento de estas reglas.</li>
+                </ul>
+                <p class="mt-4 opacity-70">Al participar, asumes toda la responsabilidad de tus acciones.</p>
             </div>
         </div>
 
-        <!-- Roadmap -->
+        <!-- FAQ Legal -->
         <div class="glass-card">
-            <div class="grid-2">
-                <div>
-                    <h2 class="text-3xl title-gradient mb-4">📋 Roadmap</h2>
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-3">
-                            <div class="w-3 h-3 bg-cyan-400 rounded-full"></div>
-                            <span class="text-cyan-300 font-medium">Fase 1:</span>
-                            <span class="opacity-80">Desarrollo de minijuegos base (Completado)</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-3 h-3 bg-purple-400 rounded-full animate-pulse"></div>
-                            <span class="text-purple-300 font-medium">Fase 2:</span>
-                            <span class="opacity-80">Beta cerrada con comunidad (En curso)</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-3 h-3 bg-gray-500 rounded-full"></div>
-                            <span class="text-gray-300 font-medium">Fase 3:</span>
-                            <span class="opacity-80">Lanzamiento oficial (Próximamente)</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-3 h-3 bg-gray-500 rounded-full"></div>
-                            <span class="text-gray-300 font-medium">Fase 4:</span>
-                            <span class="opacity-80">Actualizaciones de personajes y eventos</span>
-                        </div>
-                    </div>
+            <h2 class="text-3xl title-gradient text-center mb-6">❓ Preguntas Frecuentes (Legal)</h2>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Puedo usar los doblajes de Wylder en mis propios proyectos?</span>
+                    <i class="fas fa-chevron-down"></i>
                 </div>
-                <div>
-                    <div class="image-frame">
-                        <img src="memr3.jpg" alt="Roadmap del juego" onerror="this.src='https://placehold.co/600x300/0a1525/00D4FF?text=Roadmap'">
-                    </div>
+                <div class="faq-answer">Solo con autorización expresa. Contáctanos para solicitar permisos.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Qué pasa si rompo una regla?</span>
+                    <i class="fas fa-chevron-down"></i>
                 </div>
+                <div class="faq-answer">Dependiendo de la gravedad, podrías recibir una advertencia, suspensión o expulsión definitiva del servidor.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Ofrecen contratos formales para actores?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">Sí, para proyectos grandes se firman acuerdos de confidencialidad y cesión de derechos.</div>
             </div>
         </div>
 
-        <!-- FAQ -->
-        <div id="faq" class="glass-card">
-            <h2 class="text-3xl title-gradient text-center mb-6">❓ Preguntas frecuentes</h2>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>¿Cuándo estará disponible el juego?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">Todavía no tenemos una fecha concreta, pero estamos trabajando para ofrecer la mejor experiencia. Los miembros de nuestro Discord recibirán novedades primero.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>¿Será gratuito?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">Sí, Downys será completamente gratuito. Habrá cosméticos opcionales dentro del juego para quienes quieran apoyar el desarrollo.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>¿En qué plataformas estará disponible?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">El juego estará disponible en PC, móvil y consolas a través de Roblox, con soporte multiplataforma completo.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>¿Puedo formar parte del equipo de desarrollo?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">¡Claro! Únete a nuestro Discord y mantente atento a las convocatorias para testers y colaboradores.</div>
-            </div>
-        </div>
-
-        <!-- Sección final: solo Discord -->
+        <!-- Aceptación -->
         <div class="glass-card text-center">
-            <h2 class="text-3xl title-gradient mb-3">🎮 Mantente al día</h2>
-            <p class="mb-6 opacity-80">Únete a nuestro Discord para no perderte ninguna novedad, eventos y la beta cerrada.</p>
+            <h2 class="text-3xl title-gradient mb-3">✅ Aceptación de Términos</h2>
+            <p class="mb-6 opacity-80">Al hacer clic en "Aceptar" o al permanecer en nuestro Discord, confirmas que has leído y aceptas estos términos y condiciones.</p>
             <div class="flex flex-wrap gap-4 justify-center">
-                <a href="https://discord.gg/KQ6Fjma2W7" target="_blank" class="btn-primary"><i class="fab fa-discord"></i> Discord oficial</a>
+                <a href="https://discord.gg/j5vgSJp8ZB" target="_blank" class="btn-primary"><i class="fab fa-discord"></i> Aceptar y unirme a Discord</a>
+                <a href="index.html" class="btn-outline">Volver al inicio</a>
             </div>
         </div>
     </div>
 
     <div class="footer">
-        <p class="opacity-50 text-sm">Downys - Un juego de The Light is Amazing Studio <br> Próximamente en Roblox | © 2026</p>
+        <p class="opacity-50 text-sm">Wylder Creative Studio - Términos y Condiciones <br> © 2026 - Todos los derechos reservados.</p>
     </div>
 
     <script>
-        // Partículas flotantes
         function createParticles() {
             const container = document.getElementById('particles');
             const count = 70;
@@ -532,22 +487,12 @@
         }
         createParticles();
 
-        // FAQ Acordeón
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const parent = question.parentElement;
                 parent.classList.toggle('active');
             });
         });
-
-        // Botón de recordatorio
-        const remindBtn = document.getElementById('remindBtn');
-        if (remindBtn) {
-            remindBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                alert('📅 Te avisaremos cuando el juego esté disponible. ¡Sigue atento a nuestro Discord!');
-            });
-        }
     </script>
 </body>
 </html>
