@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Hasta Encontrarte | Próximamente en Roblox</title>
+    <title>Proyectos Actuales | Wylder Creative Studio</title>
     <link rel="icon" href="IconoTHE.gif" type="image/gif">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Cinema:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -23,7 +22,6 @@
             overflow-x: hidden;
         }
 
-        /* Fondo fijo: podredumbre escarlata (imagen de Malenia / paisaje rojizo) */
         .fixed-bg {
             position: fixed;
             top: 0;
@@ -36,7 +34,6 @@
             filter: brightness(0.7) contrast(1.2);
         }
 
-        /* Overlay con degradado rojo/negro inspirado en la podredumbre */
         .overlay {
             position: fixed;
             top: 0;
@@ -47,7 +44,6 @@
             z-index: -2;
         }
 
-        /* Partículas de podredumbre / ceniza (naranja/rojo) */
         .particles {
             position: fixed;
             top: 0;
@@ -72,7 +68,6 @@
             100% { transform: translateY(-20vh) translateX(30px); opacity: 0; }
         }
 
-        /* Mariposas (inspiradas en la segunda fase de Malenia) */
         .butterfly {
             position: absolute;
             width: 30px;
@@ -92,14 +87,12 @@
             100% { transform: translate(-40px, -60px) rotate(15deg); opacity: 0; }
         }
 
-        /* Contenedor principal */
         .container-custom {
             max-width: 1300px;
             margin: 0 auto;
             padding: 2rem;
         }
 
-        /* Tarjetas estilo vidrio manchado de sangre con bordes dorado quemado */
         .glass-card {
             background: rgba(10, 5, 8, 0.55);
             backdrop-filter: blur(14px);
@@ -124,7 +117,6 @@
             box-shadow: 0 25px 40px rgba(220, 80, 40, 0.25);
         }
 
-        /* Títulos con gradiente escarlata y oro oxidado */
         .title-malenia {
             font-family: 'Cinema', 'Cormorant Garamond', serif;
             background: linear-gradient(135deg, #E67E22, #C0392B, #8B0000);
@@ -141,7 +133,6 @@
             font-weight: 600;
         }
 
-        /* Botones (rojo/oscuro) */
         .btn-primary {
             display: inline-flex;
             align-items: center;
@@ -165,7 +156,6 @@
             border-color: #E67E22;
         }
 
-        /* Botón secundario borde dorado quemado */
         .btn-outline {
             display: inline-flex;
             align-items: center;
@@ -188,7 +178,6 @@
             color: #F5B041;
         }
 
-        /* Botón volver */
         .btn-back {
             display: inline-flex;
             align-items: center;
@@ -212,7 +201,6 @@
             border-color: #F39C12;
         }
 
-        /* Badges (estilo podredumbre) */
         .feature-badge {
             display: inline-block;
             background: rgba(176, 58, 46, 0.2);
@@ -233,7 +221,6 @@
             transform: translateY(-2px);
         }
 
-        /* Grid */
         .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -241,7 +228,6 @@
             align-items: center;
         }
 
-        /* Marcos de imágenes con borde rojizo */
         .image-frame {
             background: rgba(0, 0, 0, 0.4);
             border-radius: 28px;
@@ -269,7 +255,6 @@
             transform: scale(1.02);
         }
 
-        /* Sección lanzamiento */
         .launch-message {
             background: rgba(0, 0, 0, 0.5);
             border-radius: 32px;
@@ -279,7 +264,6 @@
             backdrop-filter: blur(8px);
         }
 
-        /* FAQ (acordeón) */
         .faq-item {
             background: rgba(0, 0, 0, 0.5);
             border-radius: 20px;
@@ -322,7 +306,7 @@
         }
 
         .faq-item.active .faq-answer {
-            max-height: 200px;
+            max-height: 500px;
             padding: 0 1.5rem 1.2rem 1.5rem;
         }
 
@@ -330,7 +314,6 @@
             transform: rotate(180deg);
         }
 
-        /* Header y footer */
         .header {
             position: sticky;
             top: 0;
@@ -349,7 +332,6 @@
             background: rgba(0, 0, 0, 0.5);
         }
 
-        /* Responsive */
         @media (max-width: 900px) {
             .grid-2 { grid-template-columns: 1fr; gap: 1.5rem; }
             .container-custom { padding: 1rem; }
@@ -360,190 +342,169 @@
 </head>
 <body>
 
-    <!-- Fondo con estética de Malenia (podredumbre escarlata) -->
     <div class="fixed-bg"></div>
     <div class="overlay"></div>
     <div class="particles" id="particles"></div>
     <div id="butterflies"></div>
 
-    <!-- Header -->
     <div class="header">
         <div class="container-custom mx-auto flex flex-wrap justify-between items-center gap-4">
             <div class="flex items-center gap-3">
                 <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Volver al inicio</a>
                 <img src="IconoTHE.gif" class="w-12 h-12 rounded-full shadow-lg" alt="Logo">
-                <span class="text-xl font-bold title-malenia tracking-wide">Hasta Encontrarte</span>
+                <span class="text-xl font-bold title-malenia tracking-wide">Proyectos Actuales</span>
             </div>
             <div class="flex gap-4">
-                <a href="https://discord.gg/KQ6Fjma2W7" target="_blank" class="text-white/70 hover:text-amber-400 transition duration-300"><i class="fab fa-discord"></i> Discord</a>
+                <a href="https://discord.gg/j5vgSJp8ZB" target="_blank" class="text-white/70 hover:text-amber-400 transition duration-300"><i class="fab fa-discord"></i> Discord</a>
                 <a href="#faq" class="text-white/70 hover:text-amber-400 transition duration-300">FAQ</a>
             </div>
         </div>
     </div>
 
     <div class="container-custom">
-        <!-- Hero -->
+        <!-- Hero: Proyectos -->
         <div class="glass-card">
             <div class="grid-2">
                 <div>
                     <div class="flex items-center gap-2 mb-3">
-                        <span class="px-3 py-1 bg-red-800/30 rounded-full text-amber-300 text-xs border border-red-600/40">Próximamente en Roblox</span>
+                        <span class="px-3 py-1 bg-red-800/30 rounded-full text-amber-300 text-xs border border-red-600/40">En Producción</span>
                     </div>
-                    <h1 class="text-5xl md:text-6xl title-malenia mb-4">Hasta Encontrarte</h1>
+                    <h1 class="text-5xl md:text-6xl title-malenia mb-4">Proyectos Actuales</h1>
                     <p class="text-lg leading-relaxed opacity-90 mb-6">
-                        Una experiencia que mezcla <strong class="text-amber-400">puzzles, misterio, terror psicológico y comedia negra</strong>. 
-                        Un grupo de amigos buscando a su amiga desaparecida. Resuelve acertijos, 
-                        descubre secretos oscuros y sobrevive a encuentros con entidades que alternan entre lo aterrador y lo absurdo.
+                        Conoce los proyectos en los que Wylder Creative Studio está trabajando actualmente.
                     </p>
                     <div class="flex flex-wrap gap-3 mb-6">
-                        <span class="feature-badge"><i class="fas fa-brain"></i> Puzzles</span>
-                        <span class="feature-badge"><i class="fas fa-ghost"></i> Terror Psicológico</span>
-                        <span class="feature-badge"><i class="fas fa-theater-masks"></i> Comedia Negra</span>
-                        <span class="feature-badge"><i class="fas fa-map"></i> Narrativa Ramificada</span>
-                    </div>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#" class="btn-primary" id="remindBtn"><i class="fas fa-bell"></i> Recordar lanzamiento</a>
-                        <a href="https://discord.gg/KQ6Fjma2W7" target="_blank" class="btn-outline"><i class="fab fa-discord"></i> Comunidad</a>
+                        <span class="feature-badge"><i class="fas fa-gamepad"></i> Videojuegos</span>
+                        <span class="feature-badge"><i class="fas fa-film"></i> Anime</span>
+                        <span class="feature-badge"><i class="fas fa-microphone-alt"></i> Doblaje</span>
                     </div>
                 </div>
                 <div>
                     <div class="image-frame">
-                        <img src="male3.gif" alt="Ecos del Pasado - Juego de Roblox" onerror="this.src='https://placehold.co/600x400/2a0a0a/C0392B?text=Ecos+del+Pasado'">
+                        <img src="male3.gif" alt="Proyectos" onerror="this.src='https://placehold.co/600x400/2a0a0a/C0392B?text=Proyectos+Actuales'">
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Características -->
+        <!-- Minecraft Symphonia -->
         <div class="glass-card">
             <div class="grid-2">
                 <div class="order-2 md:order-1">
                     <div class="image-frame">
-                        <img src="male2.jpg" alt="Gameplay de Ecos del Pasado" onerror="this.src='https://placehold.co/600x400/2a0a0a/C0392B?text=Puzzles+y+Misterio'">
+                        <img src="male2.jpg" alt="Minecraft Symphonia" onerror="this.src='https://placehold.co/600x400/2a0a0a/C0392B?text=Minecraft+Symphonia'">
                     </div>
                 </div>
                 <div class="order-1 md:order-2">
-                    <h2 class="text-3xl title-malenia mb-4">💀 Características</h2>
+                    <h2 class="text-3xl title-malenia mb-4">🎮 Minecraft Symphonia</h2>
                     <ul class="space-y-4">
                         <li class="flex gap-3 items-start">
-                            <i class="fas fa-project-diagram text-amber-400 mt-1 text-xl"></i>
-                            <div><strong class="text-amber-300">Narrativa ramificada</strong><br>Tus decisiones afectan el curso de la historia, llevándote a múltiples finales.</div>
+                            <i class="fas fa-ghost text-amber-400 mt-1 text-xl"></i>
+                            <div><strong class="text-amber-300">Terror Analógico</strong><br>Una experiencia inmersiva que combina elementos de terror analógico con la estética de Minecraft.</div>
                         </li>
                         <li class="flex gap-3 items-start">
-                            <i class="fas fa-lightbulb text-amber-400 mt-1 text-xl"></i>
-                            <div><strong class="text-amber-300">Sistema de pistas</strong><br>Investiga escenarios, reúne evidencia y conecta los puntos para resolver el misterio.</div>
+                            <i class="fas fa-microphone-alt text-amber-400 mt-1 text-xl"></i>
+                            <div><strong class="text-amber-300">100% Producido por Wylder</strong><br>Desde la concepción hasta la producción final, todo el proyecto es obra de Wylder Creative Studio.</div>
                         </li>
                         <li class="flex gap-3 items-start">
-                            <i class="fas fa-skull text-amber-400 mt-1 text-xl"></i>
-                            <div><strong class="text-amber-300">Encuentros únicos</strong><br>Entidades que oscilan entre lo aterrador y lo absurdo, manteniéndote en vilo.</div>
-                        </li>
-                        <li class="flex gap-3 items-start">
-                            <i class="fas fa-laugh-squint text-amber-400 mt-1 text-xl"></i>
-                            <div><strong class="text-amber-300">Humor único</strong><br>Diálogos y situaciones cómicas que alivian la tensión sin romper la atmósfera.</div>
+                            <i class="fas fa-headphones text-amber-400 mt-1 text-xl"></i>
+                            <div><strong class="text-amber-300">Banda Sonora Original</strong><br>Música y efectos de sonido diseñados para sumergirte en la atmósfera.</div>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!-- Lanzamiento -->
+        <!-- Anime en Doblaje -->
         <div class="glass-card text-center">
-            <h2 class="text-3xl title-malenia mb-3">🦋 La podredumbre se acerca</h2>
+            <h2 class="text-3xl title-malenia mb-3">📺 Anime en Doblaje</h2>
             <div class="launch-message max-w-2xl mx-auto">
-                <i class="fas fa-hourglass-half text-4xl text-amber-500 mb-3 block"></i>
-                <p class="text-lg mb-2">El lanzamiento está pendiente de revelación.</p>
-                <p class="opacity-80">Únete a nuestro Discord</p>
-                <div class="mt-4">
-                    <a href="https://discord.gg/KQ6Fjma2W7" target="_blank" class="btn-primary"><i class="fab fa-discord"></i> Unirse a Discord</a>
+                <i class="fas fa-question-circle text-4xl text-amber-500 mb-3 block"></i>
+                <p class="text-lg mb-2">Actualmente estamos trabajando en el doblaje de un anime.</p>
+                <p class="opacity-80">Los detalles se revelarán próximamente. ¡Mantente atento a nuestras redes sociales!</p>
+                <div class="mt-4 flex flex-wrap gap-4 justify-center">
+                    <a href="WylderS.html" class="btn-primary"><i class="fas fa-share-alt"></i> Redes Sociales</a>
                 </div>
             </div>
         </div>
 
-        <!-- Roadmap -->
+        <!-- Roadmap de Proyectos -->
         <div class="glass-card">
             <div class="grid-2">
                 <div>
-                    <h2 class="text-3xl title-malenia mb-4">📜 Hoja de ruta</h2>
+                    <h2 class="text-3xl title-malenia mb-4">📜 Fases de Producción</h2>
                     <div class="space-y-4">
                         <div class="flex items-center gap-3">
                             <div class="w-3 h-3 bg-amber-600 rounded-full"></div>
                             <span class="text-amber-400 font-medium">Fase 1:</span>
-                            <span class="opacity-80">Diseño de acertijos y narrativa principal (Completado)</span>
+                            <span class="opacity-80">Desarrollo conceptual (Completado)</span>
                         </div>
                         <div class="flex items-center gap-3">
                             <div class="w-3 h-3 bg-red-600 rounded-full animate-pulse"></div>
                             <span class="text-red-300 font-medium">Fase 2:</span>
-                            <span class="opacity-80">Iniciar beta</span>
+                            <span class="opacity-80">Producción y doblaje (En curso)</span>
                         </div>
                         <div class="flex items-center gap-3">
                             <div class="w-3 h-3 bg-gray-500 rounded-full"></div>
                             <span class="text-gray-300 font-medium">Fase 3:</span>
-                            <span class="opacity-80">Lanzamiento oficial (Próximamente)</span>
+                            <span class="opacity-80">Postproducción (Próximamente)</span>
                         </div>
                         <div class="flex items-center gap-3">
                             <div class="w-3 h-3 bg-gray-500 rounded-full"></div>
                             <span class="text-gray-300 font-medium">Fase 4:</span>
-                            <span class="opacity-80">Actualizaciones y nuevos finales</span>
+                            <span class="opacity-80">Lanzamiento público</span>
                         </div>
                     </div>
                 </div>
                 <div>
                     <div class="image-frame">
-                        <img src="mafd.gif" alt="Mapa de desarrollo" onerror="this.src='https://placehold.co/600x300/2a0a0a/C0392B?text=Camino+hacia+la+podredumbre'">
+                        <img src="mafd.gif" alt="Fases" onerror="this.src='https://placehold.co/600x300/2a0a0a/C0392B?text=Fases+de+Producción'">
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- FAQ -->
+        <!-- FAQ Proyectos -->
         <div id="faq" class="glass-card">
-            <h2 class="text-3xl title-malenia text-center mb-6">❓ Preguntas frecuentes</h2>
+            <h2 class="text-3xl title-malenia text-center mb-6">❓ Preguntas Frecuentes</h2>
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>¿Cuándo estará disponible "Hasta Encontrarte"?</span>
+                    <span>¿Cuándo estará disponible Minecraft Symphonia?</span>
                     <i class="fas fa-chevron-down"></i>
                 </div>
-                <div class="faq-answer">Aún no hay una fecha concreta, pero estamos afinando cada rincón de la mansión. Los miembros de nuestro Discord serán los primeros en saberlo.</div>
+                <div class="faq-answer">Aún no hay fecha confirmada, pero estamos trabajando arduamente. Los miembros de nuestro Discord recibirán noticias primero.</div>
             </div>
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>¿Será gratuito?</span>
+                    <span>¿El anime en doblaje es una producción original?</span>
                     <i class="fas fa-chevron-down"></i>
                 </div>
-                <div class="faq-answer">Sí, el juego base será gratuito. Planeamos cosméticos opcionales y expansiones de historia como apoyo al desarrollo.</div>
+                <div class="faq-answer">Por el momento no podemos revelar detalles, pero será un proyecto emocionante. Sigue nuestras redes para actualizaciones.</div>
             </div>
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>¿Plataformas disponibles?</span>
+                    <span>¿Puedo participar como actor de doblaje?</span>
                     <i class="fas fa-chevron-down"></i>
                 </div>
-                <div class="faq-answer">PC, móvil y consolas a través de Roblox, con progreso y juego cruzado completo.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>¿Puedo contribuir al desarrollo?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">¡Por supuesto! Únete a nuestro Discord y participa en las sesiones de testing y lluvia de ideas para ayudarnos a dar forma a la experiencia.</div>
+                <div class="faq-answer">¡Sí! Únete a nuestro Discord y estate atento a las convocatorias de casting.</div>
             </div>
         </div>
 
-        <!-- Discord final -->
+        <!-- Discord -->
         <div class="glass-card text-center">
-            <h2 class="text-3xl title-malenia mb-3">🕯️ Sumejerte en la busqueda</h2>
-            <p class="mb-6 opacity-80">Sumérgete en la comunidad, comparte teorías y prepárate para enfrentar los secretos de la mansión.</p>
+            <h2 class="text-3xl title-malenia mb-3">🔔 Mantente Informado</h2>
+            <p class="mb-6 opacity-80">Únete a nuestro Discord para recibir actualizaciones exclusivas de los proyectos.</p>
             <div class="flex flex-wrap gap-4 justify-center">
-                <a href="https://discord.gg/KQ6Fjma2W7" target="_blank" class="btn-primary"><i class="fab fa-discord"></i> Discord oficial</a>
+                <a href="https://discord.gg/j5vgSJp8ZB" target="_blank" class="btn-primary"><i class="fab fa-discord"></i> Discord oficial</a>
             </div>
         </div>
     </div>
 
     <div class="footer">
-        <p class="opacity-60 text-sm">Hasta Encontrarte - Un juego de The Light is Amazing Studio <br> Próximamente en Roblox | © 2026</p>
+        <p class="opacity-60 text-sm">Wylder Creative Studio - Proyectos Actuales <br> © 2026 - Todos los derechos reservados.</p>
     </div>
 
     <script>
-        // Partículas de podredumbre
         function createParticles() {
             const container = document.getElementById('particles');
             const count = 90;
@@ -562,7 +523,6 @@
         }
         createParticles();
 
-        // Mariposas rojas (segunda fase de Malenia)
         function createButterflies() {
             const container = document.getElementById('butterflies');
             const count = 12;
@@ -581,22 +541,12 @@
         }
         createButterflies();
 
-        // FAQ Acordeón
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const parent = question.parentElement;
                 parent.classList.toggle('active');
             });
         });
-
-        // Botón recordatorio
-        const remindBtn = document.getElementById('remindBtn');
-        if (remindBtn) {
-            remindBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                alert('🦋 Te avisaremos cuando el juego esté disponible. ¡Sigue atento a nuestro Discord!');
-            });
-        }
     </script>
 </body>
 </html>
